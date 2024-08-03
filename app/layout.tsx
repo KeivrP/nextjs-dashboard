@@ -10,7 +10,6 @@ export default function RootLayout({
     <html lang="es">
       <body className={`${montserrat.className} antialiased`}>
         {children}
-        <footer>Hecho con amor por mi</footer>
       </body>
     </html>
   );

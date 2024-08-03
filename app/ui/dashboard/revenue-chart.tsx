@@ -14,9 +14,9 @@ export default async function RevenueChart() {
   const chartHeight = 350;
   // NOTE: Uncomment this code in Chapter 7
 
-   const { yAxisLabels, topLabel } = generateYAxis(revenue);
+   const { yAxisLabels, topLabel } = generateYAxis(revenue.rows);
 
-   if (!revenue || revenue.length === 0) {
+   if (!revenue || revenue.rowCount === 0) {
      return <p className="mt-4 text-gray-400">No data available.</p>;
    }
 
@@ -38,7 +38,7 @@ export default async function RevenueChart() {
             ))}
           </div>
 
-          {revenue.map((month) => (
+          {revenue.rows.map((month) => (
             <div key={month.month} className="flex flex-col items-center gap-2">
               <div
                 className="w-full rounded-md bg-blue-300"
