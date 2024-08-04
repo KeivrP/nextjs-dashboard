@@ -10,7 +10,6 @@ import {
 import { formatCurrency } from "./utils";
 import { invoices, customers, users, revenue } from "./placeholder-data";
 
-const client = await db.connect();
 
 export async function fetchRevenue() {
   try {
@@ -43,6 +42,7 @@ export async function fetchLatestInvoices() {
       ...invoice,
       amount: formatCurrency(invoice.amount),
     }));
+    
     return latestInvoices;
   } catch (error) {
     console.error("Database Error:", error);
